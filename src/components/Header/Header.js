@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {COLORS, WEIGHTS, QUERIES} from '../../constants';
+import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton';
@@ -12,17 +12,12 @@ import VisuallyHidden from '../VisuallyHidden';
 const Header = () => {
     const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
-    // For our mobile hamburger menu, we'll want to use a button
-    // with an onClick handler, something like this:
-    //
-    // <button onClick={() => setShowMobileMenu(true)}>
-
     return (
         <header>
-            <SuperHeader/>
-            <MainHeader>>
+            <SuperHeader />
+            <MainHeader>
                 <LogoWrapper>
-                    <Logo/>
+                    <Logo />
                 </LogoWrapper>
                 <DesktopNav>
                     <NavLink href="/sale">Sale</NavLink>
@@ -34,19 +29,19 @@ const Header = () => {
                 </DesktopNav>
                 <MobileActions>
                     <ShoppingBagButton type="button">
-                        <Icon id="shopping-bag"/>
+                        <Icon id="shopping-bag" />
                         <VisuallyHidden>Open cart</VisuallyHidden>
                     </ShoppingBagButton>
                     <UnstyledButton type="button">
-                        <Icon id="search"/>
+                        <Icon id="search" />
                         <VisuallyHidden>Search</VisuallyHidden>
                     </UnstyledButton>
-                    <UnstyledButton type="button">
-                        <Icon id="menu"/>
+                    <UnstyledButton type="button" onClick={() => setShowMobileMenu(true)}>
+                        <Icon id="menu" />
                         <VisuallyHidden>Open menu</VisuallyHidden>
                     </UnstyledButton>
                 </MobileActions>
-                <Filler/>
+                <Filler />
             </MainHeader>
 
             <MobileMenu
@@ -79,7 +74,7 @@ const MainHeader = styled.div`
 const DesktopNav = styled.nav`
   display: flex;
   gap: 48px;
-  margin: 0 48px;
+  margin: 0px 48px;
 
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
@@ -88,12 +83,12 @@ const DesktopNav = styled.nav`
 
 const MobileActions = styled.div`
   display: none;
-  
+
   @media ${QUERIES.tabletAndSmaller} {
     gap: 32px;
     display: flex;
   }
-  
+
   @media ${QUERIES.phoneAndSmaller} {
     gap: 16px;
   }
@@ -101,7 +96,7 @@ const MobileActions = styled.div`
 
 const LogoWrapper = styled.div`
   flex: 1;
-  
+
   @media ${QUERIES.tabletAndSmaller} {
     flex: revert;
   }
@@ -113,12 +108,11 @@ const ShoppingBagButton = styled(UnstyledButton)`
 
 const Filler = styled.div`
   flex: 1;
-  
+
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
   }
 `;
-
 
 const NavLink = styled.a`
   font-size: 1.125rem;
