@@ -10,7 +10,7 @@ In this workshop, we'll make this application responsive, so that it looks great
 
 The design can be found on Figma:
 
-- https://www.figma.com/file/kAL3AumTUV11y1IqHhltB6/Sole-and-Ankle-%E2%80%94-Mockup
+-   https://www.figma.com/file/kAL3AumTUV11y1IqHhltB6/Sole-and-Ankle-%E2%80%94-Mockup
 
 We'll use a **desktop-first** approach for this process, and our breakpoints will be set as follows:
 
@@ -64,7 +64,7 @@ You'll need to update the hamburger-menu button we added in Exercise 2 to flip `
 
 You should use the `@reach/dialog` package to make sure that the modal is accessible. We took a quick look at this package in a bonus video, [“Building accessible modals”](https://courses.joshwcomeau.com/css-for-js/05-responsive-css/05-exercises#bonus-building-accessible-modals). You can check out the docs for more details:
 
-- https://reach.tech/dialog/
+-   https://reach.tech/dialog/
 
 (You may wish to skip the default styles that come with the package. This is explained in [their styling guide](https://reach.tech/styling/#skip-including-styles). The `--reach-dialog` flag has already been set for you, in `GlobalStyles.js`)
 
@@ -97,7 +97,7 @@ As it stands, we have a few colors in our `constants.js` file. When we want to u
 import { COLORS } from '../../constants';
 
 const Something = styled.p`
-  color: ${COLORS.gray[900]};
+    color: ${COLORS.gray[900]};
 `;
 ```
 
@@ -105,7 +105,7 @@ This works fine, but I personally prefer to use CSS variables for colors. It mak
 
 ```jsx
 const Something = styled.p`
-  color: var(--color-gray-900);
+    color: var(--color-gray-900);
 `;
 ```
 

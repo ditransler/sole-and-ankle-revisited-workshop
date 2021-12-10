@@ -5,22 +5,22 @@ import SHOES from '../../data';
 import ShoeCard from '../ShoeCard';
 
 const ShoeGrid = () => {
-  return (
-    <Wrapper>
-      {SHOES.map((shoe) => (
-        <ShoeWrapper key={shoe.slug}>
-          <ShoeCard {...shoe} />
-        </ShoeWrapper>
-      ))}
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            {SHOES.map((shoe) => (
+                <ShoeWrapper key={shoe.slug}>
+                    <ShoeCard {...shoe} />
+                </ShoeWrapper>
+            ))}
+        </Wrapper>
+    );
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  /*
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    /*
     Alternatively, if we can't use 'gap', we could set:
 
     margin: -16px;
@@ -32,8 +32,8 @@ const Wrapper = styled.div`
 `;
 
 const ShoeWrapper = styled.div`
-  min-width: 275px;
-  flex: 1;
+    min-width: 275px;
+    flex: 1;
 `;
 
 export default ShoeGrid;
